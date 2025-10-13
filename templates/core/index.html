@@ -1,0 +1,1045 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    <main>
+        <!-- hero slider area start -->
+        <section class="slider-area">
+            <div class="hero-slider-active slick-arrow-style slick-arrow-style_hero slick-dot-style">
+                <!-- single slider item start -->
+                {% for slider in sliders %}
+                    <div class="hero-single-slide hero-overlay">
+                    <div class="hero-slider-item bg-img" data-bg="{{ slider.image.url }}">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="hero-slider-content slide-1">
+                                        <h2 class="slide-title">{{ slider.title|truncatewords:6 }}</h2>
+                                        <h6 class="slide-desc">{{ slider.subtitle }}</h6>
+                                        <a href="{% url "about" %}" class="btn btn-hero">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- single slider item start -->
+            </div>
+        </section>
+        <!-- hero slider area end -->
+
+        <!-- service policy area start -->
+        <div class="service-policy section-padding">
+            <div class="container">
+                <div class="row mtn-30">
+                    <div class="col-md-4">
+                        <div class="policy-item">
+                            <div class="policy-icon">
+                                <i class="pe-7s-plane"></i>
+                            </div>
+                            <div class="policy-content">
+                                <h4 class="policy-title">Free Shipping</h4>
+                                <p>Free shipping all order</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="policy-item">
+                            <div class="policy-icon">
+                                <i class="pe-7s-headphones"></i>
+                            </div>
+                            <div class="policy-content">
+                                <h4 class="policy-title">Customer Support</h4>
+                                <p>Support 24 hours a day</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="policy-item">
+                            <div class="policy-icon">
+                                <i class="pe-7s-shield"></i>
+                            </div>
+                            <div class="policy-content">
+                                <h4 class="policy-title">Secure Payment</h4>
+                                <p>We ensure secure payment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- service policy area end -->
+
+        <!-- banner statistics area start -->
+        <div class="banner-statistics-area">
+            <div class="container">
+                <div class="row mtn-20">
+                    <div class="col-sm-6">
+                        <figure class="banner-statistics mt-20">
+                            <a href="#">
+                                <img src="{% static 'img/banner/img1-top.jpg' %}" alt="product banner">
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6">
+                        <figure class="banner-statistics mt-20">
+                            <a href="#">
+                                <img src="{% static 'img/banner/img2-top.jpg' %}" alt="product banner">
+                            </a>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- banner statistics area end -->
+
+        <!-- product area start -->
+        <section class="featured-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-header">
+                            <!-- section title start -->
+                            <div class="section-title">
+                                <h3 class="title">Featured Products</h3>
+                            </div>
+                            <!-- section title start -->
+                            <!-- product tab menu start -->
+                            <div class="product-tab-menu">
+                                <ul class="nav justify-content-center">
+                                    <li><a href="#tab1" class="active" data-bs-toggle="tab">All</a></li>
+                                    <li><a href="#tab2" data-bs-toggle="tab">New</a></li>
+                                    <li><a href="#tab3" data-bs-toggle="tab">Top Sale</a></li>
+                                </ul>
+                            </div>
+                            <!-- product tab menu end -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="product-container">
+                            <!-- product tab content start -->
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="tab1">
+                                    <div class="product-carousel-4 slick-row-10 slick-arrow-style slick-arrow-style__append">
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-1.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-18.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-30%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Leather Ladies Bag</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$60.00</span>
+                                                    <span class="price-old"><del>$70.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-2.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-17.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-10%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Jousti Duffle Bags</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$40.00</span>
+                                                    <span class="price-old"><del>$45.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-3.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-16.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-20%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Quickiin Leather Bag</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$30.00</span>
+                                                    <span class="price-old"><del>$35.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-4.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-15.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-12%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Fusions Ladies Bag</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$80.00</span>
+                                                    <span class="price-old"><del>$90.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-5.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-14.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-25%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Jousti Duffle Bags</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$70.00</span>
+                                                    <span class="price-old"><del>$85.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="tab2">
+                                    <div class="product-carousel-4 slick-row-10 slick-arrow-style slick-arrow-style__append">
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-5.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-14.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-30%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Leather Ladies Bag</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$60.00</span>
+                                                    <span class="price-old"><del>$70.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-6.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-13.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-10%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Jousti Duffle Bags</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$40.00</span>
+                                                    <span class="price-old"><del>$45.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-7.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-12.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-20%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Quickiin Leather Bag</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$30.00</span>
+                                                    <span class="price-old"><del>$35.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-8.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-11.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-12%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Fusions Ladies Bag</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$80.00</span>
+                                                    <span class="price-old"><del>$90.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-9.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-10.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-25%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Jousti Duffle Bags</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$70.00</span>
+                                                    <span class="price-old"><del>$85.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="tab3">
+                                    <div class="product-carousel-4 slick-row-10 slick-arrow-style slick-arrow-style__append">
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-11.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-9.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-30%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Leather Ladies Bag</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$60.00</span>
+                                                    <span class="price-old"><del>$70.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-12.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-8.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-30%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Leather Ladies Bag</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$60.00</span>
+                                                    <span class="price-old"><del>$70.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-13.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-7.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-30%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Leather Ladies Bag</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$60.00</span>
+                                                    <span class="price-old"><del>$70.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-14.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-6.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-30%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Leather Ladies Bag</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$60.00</span>
+                                                    <span class="price-old"><del>$70.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{% static 'img/product/product-15.jpg' %}" alt="product">
+                                                    <img class="sec-img" src="{% static 'img/product/product-5.jpg' %}" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <div class="product-label new">
+                                                        <span>-30%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="button-group">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name">
+                                                    <a href="product-details.html">Leather Ladies Bag</a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$60.00</span>
+                                                    <span class="price-old"><del>$70.00</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product item end -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product tab content end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- product area end -->
+
+        <!-- banner statistics area start -->
+        <div class="banner-statistics-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <figure class="banner-statistics">
+                            <a href="#">
+                                <img src="{% static 'img/banner/banner-full.jpg' %}" alt="product banner">
+                            </a>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- banner statistics area end -->
+
+        <!-- featured product area start -->
+        <section class="our-product section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- section title start -->
+                        <div class="section-title text-center">
+                            <h2 class="title">Our products</h2>
+                            <p class="sub-title">Add featured products to weekly lineup</p>
+                        </div>
+                        <!-- section title start -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="product-carousel-4_2 slick-row-10 slick-arrow-style">
+                            <!-- product item start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="product-details.html">
+                                        <img class="pri-img" src="{% static 'img/product/product-5.jpg' %}" alt="product">
+                                        <img class="sec-img" src="{% static 'img/product/product-14.jpg' %}" alt="product">
+                                    </a>
+                                    <div class="product-badge">
+                                        <div class="product-label new">
+                                            <span>-30%</span>
+                                        </div>
+                                    </div>
+                                    <div class="button-group">
+                                        <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                        <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                    </div>
+                                </figure>
+                                <div class="product-caption text-center">
+                                    <h6 class="product-name">
+                                        <a href="product-details.html">Leather Ladies Bag</a>
+                                    </h6>
+                                    <div class="price-box">
+                                        <span class="price-regular">$60.00</span>
+                                        <span class="price-old"><del>$70.00</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product item end -->
+
+                            <!-- product item start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="product-details.html">
+                                        <img class="pri-img" src="{% static 'img/product/product-6.jpg' %}" alt="product">
+                                        <img class="sec-img" src="{% static 'img/product/product-13.jpg' %}" alt="product">
+                                    </a>
+                                    <div class="product-badge">
+                                        <div class="product-label new">
+                                            <span>-10%</span>
+                                        </div>
+                                    </div>
+                                    <div class="button-group">
+                                        <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                        <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                    </div>
+                                </figure>
+                                <div class="product-caption text-center">
+                                    <h6 class="product-name">
+                                        <a href="product-details.html">Jousti Duffle Bags</a>
+                                    </h6>
+                                    <div class="price-box">
+                                        <span class="price-regular">$40.00</span>
+                                        <span class="price-old"><del>$45.00</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product item end -->
+
+                            <!-- product item start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="product-details.html">
+                                        <img class="pri-img" src="{% static 'img/product/product-7.jpg' %}" alt="product">
+                                        <img class="sec-img" src="{% static 'img/product/product-12.jpg' %}" alt="product">
+                                    </a>
+                                    <div class="product-badge">
+                                        <div class="product-label new">
+                                            <span>-20%</span>
+                                        </div>
+                                    </div>
+                                    <div class="button-group">
+                                        <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                        <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                    </div>
+                                </figure>
+                                <div class="product-caption text-center">
+                                    <h6 class="product-name">
+                                        <a href="product-details.html">Quickiin Leather Bag</a>
+                                    </h6>
+                                    <div class="price-box">
+                                        <span class="price-regular">$30.00</span>
+                                        <span class="price-old"><del>$35.00</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product item end -->
+
+                            <!-- product item start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="product-details.html">
+                                        <img class="pri-img" src="{% static 'img/product/product-8.jpg' %}" alt="product">
+                                        <img class="sec-img" src="{% static 'img/product/product-11.jpg' %}" alt="product">
+                                    </a>
+                                    <div class="product-badge">
+                                        <div class="product-label new">
+                                            <span>-12%</span>
+                                        </div>
+                                    </div>
+                                    <div class="button-group">
+                                        <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                        <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                    </div>
+                                </figure>
+                                <div class="product-caption text-center">
+                                    <h6 class="product-name">
+                                        <a href="product-details.html">Fusions Ladies Bag</a>
+                                    </h6>
+                                    <div class="price-box">
+                                        <span class="price-regular">$80.00</span>
+                                        <span class="price-old"><del>$90.00</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product item end -->
+
+                            <!-- product item start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="product-details.html">
+                                        <img class="pri-img" src="{% static 'img/product/product-9.jpg' %}" alt="product">
+                                        <img class="sec-img" src="{% static 'img/product/product-10.jpg' %}" alt="product">
+                                    </a>
+                                    <div class="product-badge">
+                                        <div class="product-label new">
+                                            <span>-25%</span>
+                                        </div>
+                                    </div>
+                                    <div class="button-group">
+                                        <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                        <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                    </div>
+                                </figure>
+                                <div class="product-caption text-center">
+                                    <h6 class="product-name">
+                                        <a href="product-details.html">Jousti Duffle Bags</a>
+                                    </h6>
+                                    <div class="price-box">
+                                        <span class="price-regular">$70.00</span>
+                                        <span class="price-old"><del>$85.00</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product item end -->
+
+                            <!-- product item start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="product-details.html">
+                                        <img class="pri-img" src="{% static 'img/product/product-11.jpg' %}" alt="product">
+                                        <img class="sec-img" src="{% static 'img/product/product-9.jpg' %}" alt="product">
+                                    </a>
+                                    <div class="product-badge">
+                                        <div class="product-label new">
+                                            <span>-30%</span>
+                                        </div>
+                                    </div>
+                                    <div class="button-group">
+                                        <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                        <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                    </div>
+                                </figure>
+                                <div class="product-caption text-center">
+                                    <h6 class="product-name">
+                                        <a href="product-details.html">Quickiin Leather Bag</a>
+                                    </h6>
+                                    <div class="price-box">
+                                        <span class="price-regular">$60.00</span>
+                                        <span class="price-old"><del>$70.00</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product item end -->
+
+                            <!-- product item start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="product-details.html">
+                                        <img class="pri-img" src="{% static 'img/product/product-12.jpg' %}" alt="product">
+                                        <img class="sec-img" src="{% static 'img/product/product-8.jpg' %}" alt="product">
+                                    </a>
+                                    <div class="product-badge">
+                                        <div class="product-label new">
+                                            <span>-30%</span>
+                                        </div>
+                                    </div>
+                                    <div class="button-group">
+                                        <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                        <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                    </div>
+                                </figure>
+                                <div class="product-caption text-center">
+                                    <h6 class="product-name">
+                                        <a href="product-details.html">Leather Ladies Bag</a>
+                                    </h6>
+                                    <div class="price-box">
+                                        <span class="price-regular">$60.00</span>
+                                        <span class="price-old"><del>$70.00</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product item end -->
+
+                            <!-- product item start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="product-details.html">
+                                        <img class="pri-img" src="{% static 'img/product/product-13.jpg' %}" alt="product">
+                                        <img class="sec-img" src="{% static 'img/product/product-7.jpg' %}" alt="product">
+                                    </a>
+                                    <div class="product-badge">
+                                        <div class="product-label new">
+                                            <span>-30%</span>
+                                        </div>
+                                    </div>
+                                    <div class="button-group">
+                                        <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                        <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                    </div>
+                                </figure>
+                                <div class="product-caption text-center">
+                                    <h6 class="product-name">
+                                        <a href="product-details.html">Leather Ladies Bag</a>
+                                    </h6>
+                                    <div class="price-box">
+                                        <span class="price-regular">$60.00</span>
+                                        <span class="price-old"><del>$70.00</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product item end -->
+
+                            <!-- product item start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="product-details.html">
+                                        <img class="pri-img" src="{% static 'img/product/product-14.jpg' %}" alt="product">
+                                        <img class="sec-img" src="{% static 'img/product/product-6.jpg' %}" alt="product">
+                                    </a>
+                                    <div class="product-badge">
+                                        <div class="product-label new">
+                                            <span>-30%</span>
+                                        </div>
+                                    </div>
+                                    <div class="button-group">
+                                        <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                        <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                    </div>
+                                </figure>
+                                <div class="product-caption text-center">
+                                    <h6 class="product-name">
+                                        <a href="product-details.html">Leather Ladies Bag</a>
+                                    </h6>
+                                    <div class="price-box">
+                                        <span class="price-regular">$60.00</span>
+                                        <span class="price-old"><del>$70.00</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product item end -->
+
+                            <!-- product item start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="product-details.html">
+                                        <img class="pri-img" src="{% static 'img/product/product-15.jpg' %}" alt="product">
+                                        <img class="sec-img" src="{% static 'img/product/product-5.jpg' %}" alt="product">
+                                    </a>
+                                    <div class="product-badge">
+                                        <div class="product-label new">
+                                            <span>-30%</span>
+                                        </div>
+                                    </div>
+                                    <div class="button-group">
+                                        <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                                        <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="pe-7s-look"></i></span></a>
+                                    </div>
+                                </figure>
+                                <div class="product-caption text-center">
+                                    <h6 class="product-name">
+                                        <a href="product-details.html">Leather Ladies Bag</a>
+                                    </h6>
+                                    <div class="price-box">
+                                        <span class="price-regular">$60.00</span>
+                                        <span class="price-old"><del>$70.00</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product item end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- featured product area end -->
+
+        <!-- testimonial area start -->
+        <section class="testimonial-area bg-gray section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- section title start -->
+                        <div class="section-title text-center">
+                            <h2 class="title">Testimonials</h2>
+                            <p class="sub-title">What they say</p>
+                        </div>
+                        <!-- section title start -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="testimonial-content-wrapper">
+                            <div class="testimonial-carousel">
+                                <div class="testimonial-content">
+                                    <div class="testimonial-thumb">
+                                        <img src="{% static 'img/testimonial/testimonial-1.png' %}" alt="testimonial-thumb">
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco cons dipiscing usmod.</p>
+                                    <h6 class="testimonial-author">lindsy Niloms</h6>
+                                    <span>CEO</span>
+                                </div>
+                                <div class="testimonial-content">
+                                    <div class="testimonial-thumb">
+                                        <img src="{% static 'img/testimonial/testimonial-2.png' %}" alt="testimonial-thumb">
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco cons dipiscing usmod.</p>
+                                    <h6 class="testimonial-author">Daisy Millan</h6>
+                                    <span>CEO</span>
+                                </div>
+                                <div class="testimonial-content">
+                                    <div class="testimonial-thumb">
+                                        <img src="{% static 'img/testimonial/testimonial-3.png' %}" alt="testimonial-thumb">
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco cons dipiscing usmod.</p>
+                                    <h6 class="testimonial-author">Anamika Lusy</h6>
+                                    <span>CEO</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- testimonial area end -->
+
+
+
+        <!-- brand logo area start -->
+        <div class="brand-logo section-padding pt-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="brand-logo-carousel slick-row-10 slick-arrow-style">
+                            <!-- single brand start -->
+                            <div class="brand-item">
+                                <a href="#">
+                                    <img src="{% static 'img/brand/1.png' %}" alt="">
+                                </a>
+                            </div>
+                            <!-- single brand end -->
+
+                            <!-- single brand start -->
+                            <div class="brand-item">
+                                <a href="#">
+                                    <img src="{% static 'img/brand/2.png' %}" alt="">
+                                </a>
+                            </div>
+                            <!-- single brand end -->
+
+                            <!-- single brand start -->
+                            <div class="brand-item">
+                                <a href="#">
+                                    <img src="{% static 'img/brand/3.png' %}" alt="">
+                                </a>
+                            </div>
+                            <!-- single brand end -->
+
+                            <!-- single brand start -->
+                            <div class="brand-item">
+                                <a href="#">
+                                    <img src="{% static 'img/brand/4.png' %}" alt="">
+                                </a>
+                            </div>
+                            <!-- single brand end -->
+
+                            <!-- single brand start -->
+                            <div class="brand-item">
+                                <a href="#">
+                                    <img src="{% static 'img/brand/5.png' %}" alt="">
+                                </a>
+                            </div>
+                            <!-- single brand end -->
+
+                            <!-- single brand start -->
+                            <div class="brand-item">
+                                <a href="#">
+                                    <img src="{% static 'img/brand/6.png' %}" alt="">
+                                </a>
+                            </div>
+                            <!-- single brand end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- brand logo area end -->
+    </main>
+{% endblock content %}

@@ -1,0 +1,197 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block content %}
+
+   <main>
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-wrap">
+                        <nav aria-label="breadcrumb">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url "home" %}"><i class="fa fa-home"></i></a></li>
+                                <li class="breadcrumb-item active" aria-current="page">my-account</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb area end -->
+
+    <!-- my account wrapper start -->
+    <div class="my-account-wrapper section-padding">
+        <div class="container">
+            <div class="section-bg-color">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- My Account Page Start -->
+                        <div class="myaccount-page-wrapper">
+                            <!-- My Account Tab Menu Start -->
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="myaccount-tab-menu nav" role="tablist">
+                                        <a href="#dashboad" class="active" data-bs-toggle="tab"><i class="fa fa-dashboard"></i>
+                                            Dashboard</a>
+                                        <a href="#upload" data-bs-toggle="tab"><i class="fa fa-upload"></i>
+                                            Upload File</a>
+                                        <a href="#uploads" data-bs-toggle="tab"><i class="fa fa-list"></i>
+                                            Uploads</a>
+                                        <a href="{% url "logout" %}"><i class="fa fa-sign-out"></i> Logout</a>
+                                    </div>
+                                </div>
+                                <!-- My Account Tab Menu End -->
+
+                                <!-- My Account Tab Content Start -->
+                                <div class="col-lg-9 col-md-8">
+                                    <div class="tab-content" id="myaccountContent">
+                                        <!-- Dashboard Tab Content Start -->
+                                        <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
+                                            <div class="myaccount-content">
+                                                <h5>Dashboard</h5>
+                                                <div class="welcome">
+                                                    <p>Hello, <strong>{{ user.get_full_name|default:user.username }}</strong> </p>
+                                                </div>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-4">
+                                                        <div class="card text-white bg-primary mb-3">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Total Uploads</h5>
+                                                                <h2 class="card-text">{{ user_bills.count }}</h2>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="card text-white bg-success mb-3">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Recent Upload</h5>
+                                                                <p class="card-text">
+                                                                    {% if user_bills.first %}
+                                                                        {{ user_bills.first.uploaded_at|date:"M d, Y" }}
+                                                                    {% else %}
+                                                                        No uploads yet
+                                                                    {% endif %}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Dashboard Tab Content End -->
+
+                                        <!-- Upload File Tab Content Start -->
+                                        <div class="tab-pane fade" id="upload" role="tabpanel">
+                                            <div class="myaccount-content">
+                                                <h5>Upload Bill</h5>
+                                                <div class="upload-form">
+                                                    <form method="post" enctype="multipart/form-data">
+                                                        {% csrf_token %}
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="id_staff_name" class="form-label">Staff Name</label>
+                                                                {{ form.staff_name }}
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="id_shop_name" class="form-label">Shop Name</label>
+                                                                {{ form.shop_name }}
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="id_product_number" class="form-label">Product Number</label>
+                                                                {{ form.product_number }}
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="id_gpay_number" class="form-label">GPay Number</label>
+                                                                {{ form.gpay_number }}
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="id_bill_number" class="form-label">Bill Number</label>
+                                                                {{ form.bill_number }}
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="id_bill_file" class="form-label">Bill File</label>
+                                                                {{ form.bill_file }}
+                                                            </div>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Upload Bill</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Upload File Tab Content End -->
+
+                                        <!-- Uploads Tab Content Start -->
+                                        <div class="tab-pane fade" id="uploads" role="tabpanel">
+                                            <div class="myaccount-content">
+                                                <h5>Your Uploads</h5>
+                                                <div class="myaccount-table table-responsive text-center">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-light">
+                                                            <tr>
+                                                                <th>Product Number</th>
+                                                                <th>Date</th>
+                                                                <th>Bill Number</th>
+                                                                <th>Download</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {% for bill in user_bills %}
+                                                            <tr>
+                                                                <td>{{ bill.product_number }}</td>
+                                                                <td>{{ bill.uploaded_at|date:"M d, Y" }}</td>
+                                                                <td>{{ bill.bill_number }}</td>
+                                                                <td>
+                                                                    {% if bill.bill_file %}
+                                                                        <a href="{{ bill.bill_file.url }}" class="btn btn-sqr" download>
+                                                                            <i class="fa fa-cloud-download"></i>
+                                                                            Download Bill
+                                                                        </a>
+                                                                    {% else %}
+                                                                        <span class="text-muted">No file</span>
+                                                                    {% endif %}
+                                                                </td>
+                                                            </tr>
+                                                            {% empty %}
+                                                            <tr>
+                                                                <td colspan="4" class="text-center">No uploads yet</td>
+                                                            </tr>
+                                                            {% endfor %}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Uploads Tab Content End -->
+                                    </div>
+                                </div> <!-- My Account Tab Content End -->
+                            </div>
+                        </div> <!-- My Account Page End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- my account wrapper end -->
+</main>
+<style>
+    .upload-form {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    .form-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .card {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock content %}
