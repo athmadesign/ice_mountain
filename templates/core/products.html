@@ -16,7 +16,7 @@
                             <nav aria-label="breadcrumb">
                                 <ul class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{% url "home" %}"><i class="fa fa-home"></i></a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">shop</li>
+                                    <li class="breadcrumb-item active" aria-current="page">All Products</li>
                                 </ul>
                             </nav>
                         </div>
@@ -230,7 +230,7 @@
                                     <!-- product grid start -->
                                     <div class="product-item">
                                         <figure class="product-thumb">
-                                            <a href="product-details.html">
+                                            <a href="{% url "product_detail" product.slug %}">
                                                 <img class="pri-img" src="{{ product.image.url }}" alt="product">
                                                 <img class="sec-img" src="{{ product.second_image.url }}" alt="product">
                                             </a>
@@ -239,7 +239,7 @@
                                         </figure>
                                         <div class="product-caption text-center">
                                             <h6 class="product-name">
-                                                <a href="product-details.html">{{ product.name }}</a>
+                                                <a href="{% url "product_detail" product.slug %}">{{ product.name }}</a>
                                             </h6>
                                             <div class="price-box">
                                                 <span class="price-regular">₹{{ product.sale_price }}</span>
@@ -252,7 +252,7 @@
                                     <!-- product list item end -->
                                     <div class="product-list-item">
                                         <figure class="product-thumb">
-                                            <a href="product-details.html">
+                                            <a href="{% url "product_detail" product.slug %}">
                                                 <img class="pri-img" src="{% static 'img/product/product-1.jpg' %}" alt="product">
                                                 <img class="sec-img" src="{% static 'img/product/product-18.jpg' %}" alt="product">
                                             </a>
