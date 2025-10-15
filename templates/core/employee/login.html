@@ -13,6 +13,17 @@
             <p class="text-muted">Access your account</p>
         </div>
 
+        <!-- Display form non-field errors (wrong username/password) -->
+        {% if form.non_field_errors %}
+            <div class="alert alert-danger">
+                {% for error in form.non_field_errors %}
+                    <div class="mb-1">
+                        <i class="fas fa-exclamation-circle me-2"></i>{{ error }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
         <form method="post">
             {% csrf_token %}
             
@@ -24,7 +35,9 @@
                     {{ field }}
                     {% if field.errors %}
                         <div class="text-danger small mt-1">
-                            {{ field.errors|striptags }}
+                            {% for error in field.errors %}
+                                <div><i class="fas fa-exclamation-circle me-1"></i>{{ error }}</div>
+                            {% endfor %}
                         </div>
                     {% endif %}
                 </div>
@@ -33,6 +46,12 @@
             <button type="submit" class="btn btn-primary w-100 py-2 mb-3">
                 Sign In
             </button>
+            
+            <div class="text-center mb-3">
+                <a href="{% url 'password_reset' %}" class="text-decoration-none" style="color: #09b5a9">
+                    Forgot Password?
+                </a>
+            </div>
             
             <div class="text-center">
                 <p class="mb-0">Don't have an account? 

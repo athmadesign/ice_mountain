@@ -63,15 +63,15 @@
                                                     <div class="col-md-4">
                                                         <div class="card text-white bg-primary mb-3">
                                                             <div class="card-body">
-                                                                <h5 class="card-title">Total Uploads</h5>
-                                                                <h2 class="card-text">{{ user_bills.count }}</h2>
+                                                                <h5 class="card-title text-white">Total Uploads</h5>
+                                                                <h2 class="card-text text-white">{{ user_bills.count }}</h2>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="card text-white bg-success mb-3">
                                                             <div class="card-body">
-                                                                <h5 class="card-title">Recent Upload</h5>
+                                                                <h5 class="card-title text-white">Recent Upload</h5>
                                                                 <p class="card-text">
                                                                     {% if user_bills.first %}
                                                                         {{ user_bills.first.uploaded_at|date:"M d, Y" }}

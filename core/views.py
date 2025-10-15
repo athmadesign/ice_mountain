@@ -12,8 +12,6 @@ def index(request):
 def about(request):
     return render(request, 'core/about.html')
 
-def products(request):
-    return render(request, 'core/products.html')
 
 def contact(request):
     return render(request, 'core/contact.html')

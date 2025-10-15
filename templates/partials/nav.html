@@ -30,8 +30,8 @@
                                         <ul>
                                             <li ><a href="{% url "home" %}">Home </i></a></li>
                                             <li class="position-static"><a href="{% url "about" %}">About </a></li>
-                                            <li><a href="{% url "products" %}">Products <i class="fa fa-angle-down"></i></a>
-                                                <ul class="dropdown">
+                                            <li><a href="{% url "products" %}">Products </i></a>
+                                                {% comment %} <ul class="dropdown">
                                                     <li><a href="#">shop grid layout <i class="fa fa-angle-right"></i></a>
                                                         <ul class="dropdown">
                                                             <li><a href="shop.html">shop grid left sidebar</a></li>
@@ -54,7 +54,7 @@
                                                             <li><a href="product-details-group.html">product details group</a></li>
                                                         </ul>
                                                     </li>
-                                                </ul>
+                                                </ul> {% endcomment %}
                                             </li>
                                             
                                             <li ><a href="{% url "contact" %}">Contact us</a></li>
@@ -77,18 +77,18 @@
                                                 <input type="text" placeholder="Search entire store hire" class="header-search-field">
                                                 <button class="header-search-btn"><i class="pe-7s-search"></i></button>
                                             </form>
-                                        </li>
+                                        </li> 
                                         <li class="user-hover">
                                             <a href="#">
                                                 <i class="pe-7s-user"></i>
                                             </a>
                                             <ul class="dropdown-list">
-                                                <li><a href="{% url "login" %}">login</a></li>
-                                                <li><a href="{% url "register" %}">register</a></li>
-                                                <li><a href="{% url "dashboard" %}">my account</a></li>
+                                                <li><a href="{% url "login" %}">Staff login</a></li>
+                                                <li><a href="{% url "register" %}">Staff register</a></li>
+                                                <li><a href="{% url "dashboard" %}">Staff account</a></li>
                                             </ul>
                                         </li>
-                                        <li>
+                                        {% comment %} <li>
                                             <a href="wishlist.html">
                                                 <i class="pe-7s-like"></i>
                                             </a>
@@ -98,7 +98,7 @@
                                                 <i class="pe-7s-shopbag"></i>
                                                 <div class="notification">2</div>
                                             </a>
-                                        </li>
+                                        </li> {% endcomment %}
                                     </ul>
                                 </div>
                             </div>
@@ -126,12 +126,7 @@
                                 </a>
                             </div>
                             <div class="mobile-menu-toggler">
-                                <div class="mini-cart-wrap">
-                                    <a href="cart.html">
-                                        <i class="pe-7s-shopbag"></i>
-                                        <div class="notification">0</div>
-                                    </a>
-                                </div>
+                                
                                 <button class="mobile-menu-btn">
                                     <span></span>
                                     <span></span>
@@ -176,8 +171,8 @@
                                     
                                 </li>
                                 <li class="menu-item-has-children"><a href="{% url "about" %}">About</a></li>
-                                <li class="menu-item-has-children "><a href="#">Products</a>
-                                    <ul class="dropdown">
+                                <li class="menu-item-has-children "><a href="{% url "products" %}">Products</a>
+                                    {% comment %} <ul class="dropdown">
                                         <li class="menu-item-has-children"><a href="#">shop grid layout</a>
                                             <ul class="dropdown">
                                                 <li><a href="shop.html">shop grid left sidebar</a></li>
@@ -200,7 +195,7 @@
                                                 <li><a href="product-details-group.html">product details group</a></li>
                                             </ul>
                                         </li>
-                                    </ul>
+                                    </ul> {% endcomment %}
                                 </li>
                                 
                                 <li><a href="{% url "contact" %}">Contact us</a></li>

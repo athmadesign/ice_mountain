@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'employee'
+    'employee',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,6 @@ EMAIL_HOST_USER = 'crackthedata@gmail.com'  # Your email
 EMAIL_HOST_PASSWORD = 'prci hkop vbbn lzur'  # Your app password
 DEFAULT_FROM_EMAIL = 'crackthedata@gmail.com'
 OWNER_EMAIL = 'mohammedfazilc786@gmail.com'  # Owner's email for notifications
+
+# Password reset timeout (in seconds)
+PASSWORD_RESET_TIMEOUT = 3600  # 1 hour
